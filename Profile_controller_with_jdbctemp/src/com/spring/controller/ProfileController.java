@@ -34,8 +34,8 @@ public class ProfileController {
 	// return "profile";
 	// }
 	@RequestMapping(value = "/")
-	public String getProfile(Model model) {
-		List<ProfileModel> profiles = profService.getProfile(1);
+	public String getProfile(Model model,@RequestParam("user_id")Integer id) {
+		List<ProfileModel> profiles = profService.getProfile(id);
 		// List<Prof2> profiles = profdao2.getallprof();
 		// Add the profile data to the model
 		model.addAttribute("profiles", profiles);
